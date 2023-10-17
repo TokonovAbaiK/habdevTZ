@@ -13,6 +13,7 @@ type Props = {
 
 const Navigation = ({navLink}: Props) => {
     const session = useSession()
+    console.log(session)
     return (
         <>
             {navLink.map((link) => (
@@ -23,14 +24,18 @@ const Navigation = ({navLink}: Props) => {
                     {link.label}
                 </Link>
             ))}
-            {session?.data && <Link href="/profile">Profile</Link>}
-                {session?.data ? (
-                    <Link href="#" onClick={() => signOut({ callbackUrl: "/" })}>
-                    Sign Out
-                    </Link>
-                ) : (
-                    <Link href="/signin">SignIn</Link>
-                )}
+            {session?.data &&(
+                <Link href='/profile'>Profile</Link>
+            )}
+            {session?.data ? ( 
+            <Link
+             href='#' 
+             onClick={() => signOut({callbackUrl: '/'})}>
+                Sign out
+            </Link>
+             ) : (
+             <Link href='/signin'>Sign in</Link>
+             )}
         </>
   )
 }

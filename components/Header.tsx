@@ -3,7 +3,7 @@ import { Navigation } from "./Navigation"
 const Header = () => {
     const navItems = [
         { label: "Home", href: "/" },
-         {label: "About" , href: "/about"}
+        { label: "About" , href: "/about"}
     ]
     return (
         <header>
