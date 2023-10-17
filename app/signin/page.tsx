@@ -1,5 +1,9 @@
-export default function SignIn(){
+import SignInForm from "@/components/SignInForm";
+
+export default async function SignIn(){
     return(
-        <h1>Sign In</h1>
+        <div>
+            <SignInForm/>
+        </div>
     )
 }
