@@ -34,12 +34,4 @@ export  const authConfig: AuthOptions = {
      pages:{
         signIn: '/signin'
     },
-    callbacks: {
-        async session({session , token ,  user}){
-            session.user.email = session.user?.name
-            session.user.uid = token.sub
-            
-            return session 
-        }
-    }
 }
