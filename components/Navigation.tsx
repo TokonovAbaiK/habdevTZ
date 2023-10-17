@@ -15,7 +15,7 @@ const Navigation = ({navLink}: Props) => {
     const session = useSession()
     console.log(session)
     return (
-        <>
+        <div className='nav'>
             {navLink.map((link) => (
                 <Link
                     key={link.label}
@@ -36,7 +36,7 @@ const Navigation = ({navLink}: Props) => {
              ) : (
              <Link href='/signin'>Sign in</Link>
              )}
-        </>
+        </div>
   )
 }
 

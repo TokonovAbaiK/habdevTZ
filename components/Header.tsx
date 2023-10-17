@@ -6,8 +6,10 @@ const Header = () => {
         { label: "About" , href: "/about"}
     ]
     return (
-        <header>
-            <Navigation navLink={navItems}/>
+        <header >
+            <div className="container">
+                <Navigation navLink={navItems}/>
+            </div>
         </header>
     )
 }
