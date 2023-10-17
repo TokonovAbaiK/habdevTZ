@@ -1,4 +1,5 @@
 import { users } from "@/data/users";
+import { Session } from "inspector";
 import type { AuthOptions, User } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Github from "next-auth/providers/github";
@@ -32,5 +33,13 @@ export  const authConfig: AuthOptions = {
     ],
      pages:{
         signIn: '/signin'
+    },
+    callbacks: {
+        async session({session , token ,  user}){
+            session.user.email = session.user?.name
+            session.user.uid = token.sub
+            
+            return session 
+        }
     }
 }
